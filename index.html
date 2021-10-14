@@ -11,12 +11,22 @@
     <h1>Hello</h1>
 
     <div id="app">
-        <p>{{title}} -{{author}} - {{age}}</p>
 
-        <button v-on:click="age++">Increase age</button>
-        <button v-on:click="age--">Decrease age</button>
-        <!-- @ means v-on:  -->
-        <div @click="changeTitle('new title')">Change title</div> 
+        <div v-if="showBooks">
+            <p>{{title}} -{{author}} - {{age}}</p>
+        </div>
+        
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide books</span>
+            <span v-else="!showBooks">Show books</span>
+        </button>
+
+        <!-- Another way of conditional rendering via v-show. Better performance as it uses css to make element invisible -->
+
+        <div v-show="showBooks">
+            Currently showing books
+        </div>
+
     </div>
     
     <script src="app.js"></script>

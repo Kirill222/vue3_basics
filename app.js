@@ -2,6 +2,7 @@ const app = Vue.createApp({
     //shorthand for functions inside of objects   
     data() {                        
         return {
+            showBooks: true,
             title: 'The Game of Thrones',
             author: 'John Connor',
             age: 99,
@@ -9,8 +10,8 @@ const app = Vue.createApp({
     },
     //any functions of the component we place here
     methods: {
-        changeTitle(title) {
-            this.title = title
+        toggleShowBooks() {
+            this.showBooks = !this.showBooks
         }
     },
 })
