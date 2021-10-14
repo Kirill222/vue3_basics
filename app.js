@@ -1,6 +1,12 @@
-const app = Vue.createApp({
-    //any data or functions, component template
-    template: '<h2>My first template</h2>'
+const app = Vue.createApp({ 
+    //shorthand for functions inside of objects   
+    data() {                        
+        return {
+            title: 'The Game of Thrones',
+            author: 'John Connor',
+            age: 99,
+        }
+    }
 })
 
 app.mount('#app')
