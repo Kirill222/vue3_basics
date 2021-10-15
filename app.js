@@ -20,6 +20,13 @@ const app = Vue.createApp({
             book.isFavorite = !book.isFavorite
         }      
     },
+    //computed properties
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.isFavorite)
+        }
+    }
+
 })
 
 app.mount('#app')
