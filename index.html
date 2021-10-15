@@ -28,6 +28,7 @@
         <div v-if="showBooks">
             <ul>
                 <li v-for="book in books">
+                    <img :src="book.img" :alt="book.title">
                     <h3>{{book.title}}</h3>
                     <p>{{book.author}}</p>
                 </li>
@@ -37,15 +38,13 @@
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide books</span>
             <span v-else="!showBooks">Show books</span>
-        </button>
+        </button>  
 
-        <!-- Another way of conditional rendering via v-show. Better performance as it uses css to make element invisible -->
-
-        <div v-show="showBooks">
-            Currently showing books
-        </div>
-
-        
+        <br>        
+        <!-- Attribute binding -->
+        <a v-bind:href="url">Google</a>
+        <!-- Short version of attribute binding -->
+        <a :href="url">Google</a>        
 
     </div>
     
