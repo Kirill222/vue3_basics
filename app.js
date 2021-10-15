@@ -3,33 +3,18 @@ const app = Vue.createApp({
     data() {                        
         return {
             showBooks: true,
-            title: 'The Game of Thrones',
-            author: 'John Connor',
-            age: 99,
-            layerX: 0,
-            layerY: 0,
-            offsetX: 0,
-            offsetY: 0,
+            books: [                
+                {title: "ttt", author: "ttt"},
+                {title: "bbb", author: "bbb"},
+                {title: "ccc", author: "ccc"},
+            ]
         }
     },
     //any functions of the component we place here
     methods: {
         toggleShowBooks() {
             this.showBooks = !this.showBooks
-        },
-        handleEvent(e, data) {
-            console.log(e, e.type)
-            if(data) {
-                console.log(data)
-            }
-        },
-        handleMousemove(e) {
-            console.log(e)
-            this.layerX = e.layerX
-            this.layerY = e.layerY
-            this.offsetX = e.offsetX
-            this.offsetY = e.offsetY
-        }
+        },       
     },
 })
 
